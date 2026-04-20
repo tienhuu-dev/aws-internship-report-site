@@ -48,10 +48,10 @@ The project is based on the FCJ workshop template and is customized as a persona
 ## 🛠️ Technology Stack
 
 <p align="left">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/hugo/hugo-original.svg" alt="Hugo" width="40" height="40" />
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/markdown/markdown-original.svg" alt="Markdown" width="40" height="40" />
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="40" height="40" />
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub" width="40" height="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/hugo/hugo-original.svg" alt="Hugo" width="40" height="40" />&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/markdown/markdown-original.svg" alt="Markdown" width="40" height="40" />&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="40" height="40" />&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub" width="40" height="40" />&nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="50" height="40" />
 </p>
 
@@ -179,12 +179,8 @@ These sections will be customized progressively to match the AWS internship repo
 ## 🔗 Connect with Me
 
 <p align="left">
-  <a href="https://github.com/tienhuu-dev" target="_blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="tienhuu-dev" height="30" width="40" />
-  </a>
-  <a href="https://www.linkedin.com/in/tien-huu-8a436a3a2" target="_blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="tien-huu-8a436a3a2" height="30" width="40" />
-  </a>
+  <a href="https://github.com/tienhuu-dev" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="tienhuu-dev" height="30" width="40" /></a>
+  <a href="https://www.linkedin.com/in/tien-huu-8a436a3a2" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="tien-huu-8a436a3a2" height="30" width="40" /></a>
   <a href="mailto:daohuutien2004@gmail.com" target="_blank">
     <img align="center" src="https://img.shields.io/badge/Email-daohuutien2004%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" height="28" />
   </a>
