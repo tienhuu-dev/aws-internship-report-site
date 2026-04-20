@@ -1,4 +1,4 @@
-baseURL = "https://workshop-sample.fcjuni.com/"
+baseURL = "https://tienhuu-dev.github.io/aws-internship-report-site/"
 relativeURLs = false
 canonifyURLs = false
 defaultContentLanguage = "en"
@@ -15,17 +15,23 @@ home = [ "HTML", "RSS", "JSON"]
   themeVariant = "workshop"
   # Git hub repo link
   editURL = ""
-  description = ""
-  author = "thienlh@thienlu.com"
+  description = "Personal AWS internship report site built with Hugo and the FCJ workshop template."
+  author = "Tien Huu"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
   
 [Languages]
 [Languages.en]
-title = "Internship Report"
+title = "AWS Internship Report Site"
 weight = 1
 languageName = "English"
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> GitHub Repository"
+identifier = "GitHub Repository"
+url = "https://github.com/tienhuu-dev/aws-internship-report-site"
+weight = 10
 
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fab fa-facebook'></i> AWS Study Group"
@@ -34,9 +40,15 @@ url = "https://www.facebook.com/groups/awsstudygroupfcj/"
 weight = 20
 
 [Languages.vi]
-title = "Báo cáo thực tập"
+title = "Website Báo Cáo Thực Tập AWS"
 weight = 2
 languageName = "Tiếng Việt"
+
+[[Languages.vi.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Mã nguồn GitHub"
+identifier = "GitHub Repository"
+url = "https://github.com/tienhuu-dev/aws-internship-report-site"
+weight = 10
 
 [[Languages.vi.menu.shortcuts]]
 name = "<i class='fab fa-facebook'></i> AWS Study Group"
