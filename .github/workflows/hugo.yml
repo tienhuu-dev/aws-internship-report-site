@@ -46,8 +46,7 @@ jobs:
       - name: Build website
         run: |
           hugo \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --minify
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v5
