@@ -1,4 +1,4 @@
-baseURL = "https://tienhuu-dev.github.io/aws-internship-report-site/"
+baseURL = "https://tienhuu-aws.devlab.id.vn/"
 relativeURLs = false
 canonifyURLs = false
 defaultContentLanguage = "en"
