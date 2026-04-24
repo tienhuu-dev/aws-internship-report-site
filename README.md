@@ -47,13 +47,11 @@ The project is based on the FCJ workshop template and is customized as a persona
 
 ## 🛠️ Technology Stack
 
-<p align="left">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/hugo/hugo-original.svg" alt="Hugo" width="40" height="40" />
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/markdown/markdown-original.svg" alt="Markdown" width="40" height="40" />
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="40" height="40" />
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub" width="40" height="40" />
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="50" height="40" />
-</p>
+![Hugo](https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
 
 - **Static Site Generator:** Hugo Extended
 - **Theme:** Hugo Learn Theme
@@ -178,17 +176,9 @@ These sections will be customized progressively to match the AWS internship repo
 
 ## 🔗 Connect with Me
 
-<p align="left">
-  <a href="https://github.com/tienhuu-dev" target="_blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="tienhuu-dev" height="30" width="40" />
-  </a>
-  <a href="https://www.linkedin.com/in/tien-huu-8a436a3a2" target="_blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="tien-huu-8a436a3a2" height="30" width="40" />
-  </a>
-  <a href="mailto:daohuutien2004@gmail.com" target="_blank">
-    <img align="center" src="https://img.shields.io/badge/Email-daohuutien2004%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" height="28" />
-  </a>
-</p>
+[![GitHub](https://img.shields.io/badge/GitHub-tienhuu--dev-181717?style=for-the-badge&logo=github)](https://github.com/tienhuu-dev)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Tien%20Huu-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/tien-huu-8a436a3a2)
+[![Email](https://img.shields.io/badge/Email-daohuutien2004%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:daohuutien2004@gmail.com)
 
 ---
 
