@@ -1,6 +1,4 @@
 <script
   src="{{ "js/custom-theme.js" | relURL }}{{ if not .Site.Params.disableAssetsBusting }}?{{ now.Unix }}{{ end }}"
   data-site-base-url="{{ "" | relURL }}"
-  data-service-worker-url="{{ "sw.js" | relURL }}"
-  data-enable-service-worker="{{ not hugo.IsServer }}"
 ></script>

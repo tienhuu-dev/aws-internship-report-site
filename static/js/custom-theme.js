@@ -2,23 +2,6 @@
   "use strict";
 
   const visibleBackToTopClass = "is-visible";
-  const currentScriptElement = document.currentScript;
-
-  function getRuntimeConfig() {
-    if (!currentScriptElement) {
-      return {
-        enableServiceWorker: "true",
-        serviceWorkerUrl: window.__SERVICE_WORKER_URL__,
-        siteBaseUrl: window.__SITE_BASE_URL__
-      };
-    }
-
-    return {
-      enableServiceWorker: currentScriptElement.dataset.enableServiceWorker,
-      serviceWorkerUrl: currentScriptElement.dataset.serviceWorkerUrl,
-      siteBaseUrl: currentScriptElement.dataset.siteBaseUrl
-    };
-  }
 
   function getScrollProgress() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -118,29 +101,18 @@
     document.body.classList.add("is-page-ready");
   }
 
-  function initServiceWorker() {
+  function cleanupServiceWorker() {
     if (!("serviceWorker" in navigator)) {
       return;
     }
 
-    const runtimeConfig = getRuntimeConfig();
-
-    if (runtimeConfig.enableServiceWorker !== "true") {
-      return;
-    }
-
-    const serviceWorkerUrl = runtimeConfig.serviceWorkerUrl;
-    const siteBaseUrl = runtimeConfig.siteBaseUrl;
-
-    if (!serviceWorkerUrl || !siteBaseUrl) {
-      return;
-    }
-
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register(serviceWorkerUrl, {
-        scope: siteBaseUrl
+      navigator.serviceWorker.getRegistrations().then(function (registrationList) {
+        registrationList.forEach(function (registration) {
+          registration.unregister();
+        });
       }).catch(function (error) {
-        console.warn("Service worker registration failed.", error);
+        console.warn("Service worker cleanup failed.", error);
       });
     });
   }
@@ -151,7 +123,7 @@
     initExternalLinks();
     initReadingProgress();
     initBackToTop();
-    initServiceWorker();
+    cleanupServiceWorker();
   }
 
   if (document.readyState === "loading") {
