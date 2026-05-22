@@ -85,12 +85,7 @@ You have successfully created resolver forwarding rule.
 
 2. Test DNS resolution. The dig command will return the IP addresses assigned to the VPC Interface endpoint running in VPC Cloud (your IP's will be different): dig +short s3.us-east-1.amazonaws.com 
 
-{{% notice note %}}
-The IP addresses returned are the VPC endpoint IP addresses, NOT the Resolver IP addresses you pasted from your text editor. The IP addresses of the Resolver endpoint and the VPC endpoint look similar because they are all from the VPC Cloud CIDR block.
-{{% /notice %}}
-
 ![create rule](/images/5-Workshop/5.4-S3-onprem/dig.png)
-
 
 3. Navigate to the VPC menu (Endpoints section), select the S3 Interface endpoint. Click the Subnets tab and verify that the IP addresses returned by Dig match the VPC endpoint:
 

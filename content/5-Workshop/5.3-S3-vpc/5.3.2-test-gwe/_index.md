@@ -42,8 +42,6 @@ pre : " <b> 5.3.2 </b> "
 ![system manager](/images/5-Workshop/5.3-S3-vpc/sm1.png)
 
 3. Click **Start Session**, and select **the EC2 instance** named **Test-Gateway-Endpoint**. 
-{{% notice info %}}
-This EC2 instance is already running in "VPC Cloud" and will be used to test connectivity to Amazon S3 through the Gateway endpoint you just created (s3-gwe). {{% /notice %}}
 
 ![Start session](/images/5-Workshop/5.3-S3-vpc/start-session.png)
 
@@ -80,16 +78,4 @@ You have successfully uploaded the file to your S3 bucket. You can now terminate
 #### Section summary
 
 Congratulation on completing access to S3 from VPC. In this section, you created a Gateway endpoint for Amazon S3, and used the AWS CLI to upload an object. The upload worked because the Gateway endpoint allowed communication to S3, without needing an Internet Gateway attached to "VPC Cloud". This demonstrates the functionality of the Gateway endpoint as a secure path to S3 without traversing the Public Internet.
-
-
-
-
-
-
-
-
-
-
-
-
 

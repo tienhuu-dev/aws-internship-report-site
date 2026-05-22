@@ -18,7 +18,6 @@ pre : " <b> 5.3.2 </b> "
 
 ![Bucket name](/images/5-Workshop/5.3-S3-vpc/bucket-name.png)
 
-
 + Giữ nguyên giá trị của các fields khác (default)
 + Kéo chuột xuống và chọn **Create bucket**
 
@@ -43,8 +42,6 @@ pre : " <b> 5.3.2 </b> "
 ![system manager](/images/5-Workshop/5.3-S3-vpc/sm1.png)
 
 3. Click Start Session, và chọn EC2 instance tên **Test-Gateway-Endpoint**. 
-{{% notice info %}}
-Phiên bản EC2 này đã chạy trong "VPC cloud" và sẽ được dùng để kiểm tra khả năng kết nối với Amazon S3 thông qua điểm cuối Cổng mà bạn vừa tạo (s3-gwe). {{% /notice %}}
 
 ![Start session](/images/5-Workshop/5.3-S3-vpc/start-session.png)
 
