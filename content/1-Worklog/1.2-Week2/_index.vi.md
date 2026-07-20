@@ -1,53 +1,38 @@
 ---
 title: "Worklog Tuần 2"
 date: 2024-01-01
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
 ### Mục tiêu tuần 2:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Tìm hiểu chuyên sâu về mô hình máy ảo (**Virtual Machine**) trên AWS thông qua **Amazon EC2**.
+- Hiểu các thành phần của **EC2 Instance** như **AMI**, **Instance Type**, **Key Pair** và **Security Group**.
+- Thực hành kết nối và quản lý máy chủ bằng **SSH** và **AWS Systems Manager Session Manager**.
+- Tìm hiểu cơ chế tự động mở rộng với **EC2 Auto Scaling**.
+- Làm quen với dịch vụ máy chủ đơn giản **Amazon Lightsail**.
+- Tìm hiểu các dịch vụ lưu trữ trên AWS gồm **Amazon EBS**, **Amazon S3** và **Amazon EFS**.
+- Thực hành tạo, gắn, quản lý và sao lưu tài nguyên lưu trữ trên AWS.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc thực hiện trong tuần này:
 
-### Kết quả đạt được tuần 2:
+| Ngày | Nội dung thực hiện | Ngày bắt đầu | Ngày kết thúc | Tài liệu tham khảo |
+| :-- | :-- | :-- | :-- | :-- |
+| 1 | **Tìm hiểu Amazon EC2 và Compute VM**<br>- Tìm hiểu khái niệm **Virtual Machine** và **EC2 Instance**.<br>- Tìm hiểu **AMI**, **Instance Type**, **Key Pair** và **Security Group**.<br>- Tìm hiểu vòng đời của EC2 Instance.<br>- Phân biệt **Public IP**, **Private IP** và **Elastic IP**. | 27/04/2026 | 27/04/2026 | [Amazon EC2](https://docs.aws.amazon.com/ec2/)<br>[Giới thiệu về Amazon EC2](https://000004.awsstudygroup.com/vi/) |
+| 2 | **Triển khai và truy cập EC2 Instance**<br>- Tạo **EC2 Instance** từ một **AMI**.<br>- Cấu hình **Instance Type**, **Key Pair** và **Security Group**.<br>- Kết nối đến EC2 bằng **SSH**.<br>- Tạo **IAM Role** dành cho EC2.<br>- Gán quyền **AmazonSSMManagedInstanceCore** cho Role.<br>- Gắn **IAM Role** vào EC2 Instance.<br>- Kiểm tra trạng thái **SSM Agent**.<br>- Truy cập và quản trị EC2 thông qua **AWS Systems Manager Session Manager**.<br>- So sánh phương thức truy cập bằng **SSH** và **SSM**. | 28/04/2026 | 28/04/2026 | [Amazon EC2](https://docs.aws.amazon.com/ec2/)<br>[AWS Systems Manager](https://docs.aws.amazon.com/systems-manager/)<br>[Giới thiệu về Amazon EC2](https://000004.awsstudygroup.com/vi/) |
+| 3 | **Tìm hiểu EC2 Auto Scaling và Amazon Lightsail**<br>- Tìm hiểu **Launch Template** và **Auto Scaling Group**.<br>- Phân biệt **Minimum Capacity**, **Desired Capacity** và **Maximum Capacity**.<br>- Tìm hiểu **Scaling Policy** và **Health Check**.<br>- Tạo một **Amazon Lightsail Instance**.<br>- Cấu hình **Static IP** và **Firewall Rules** trên Lightsail. | 29/04/2026 | 29/04/2026 | [EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)<br>[Amazon Lightsail](https://docs.aws.amazon.com/lightsail/)<br>[Triển khai ứng dụng FCJ Management với Auto Scaling Group](https://000006.awsstudygroup.com/vi/)<br>[Amazon Lightsail Workshop - Cost Optimization on AWS](https://000045.awsstudygroup.com/vi/) |
+| 4 | **Nền tảng lưu trữ AWS (Amazon S3)**<br>- Tìm hiểu mô hình **Object Storage** và kiến trúc của **Amazon S3**.<br>- Tìm hiểu **Bucket**, **Object**, **Object Key** và **Region**.<br>- Tạo và cấu hình **S3 Bucket**.<br>- Thực hành upload, download, copy và delete **Object**.<br>- Cấu hình **Static Website Hosting** trên **Amazon S3**.<br>- Tìm hiểu **Cross-Origin Resource Sharing (CORS)** và cấu hình **CORS Policy** cho frontend truy cập S3.<br>- Tìm hiểu **Storage Class**, **Versioning**, **Lifecycle Rule** và **Server-Side Encryption**.<br>- Tìm hiểu **Block Public Access**, **Bucket Policy** và quyền truy cập bằng **IAM Policy**.<br>- Thực hành quản lý S3 bằng **AWS Management Console** và **AWS CLI**. | 30/04/2026 | 30/04/2026 | [Amazon S3](https://docs.aws.amazon.com/s3/)<br>[Hosting website tĩnh với Amazon S3](https://000057.awsstudygroup.com/vi/)<br>[S3 Static Website Hosting](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html)<br>[S3 CORS](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html) |
+| 5 | **Tìm hiểu S3 Access Point, các lớp lưu trữ và vòng đời dữ liệu**<br>- Tìm hiểu **S3 Access Point** và cách tạo các điểm truy cập riêng cho từng ứng dụng hoặc nhóm người dùng.<br>- Tìm hiểu các **S3 Storage Class** và tiêu chí lựa chọn dựa trên tần suất truy cập dữ liệu.<br>- Tìm hiểu **S3 Lifecycle Rule** để tự động chuyển đổi hoặc xóa Object theo thời gian.<br>- Tìm hiểu các dịch vụ lưu trữ lạnh (**Cold Storage**) như **S3 Glacier Instant Retrieval**, **S3 Glacier Flexible Retrieval** và **S3 Glacier Deep Archive**.<br>- So sánh thời gian truy xuất, thời gian lưu trữ tối thiểu và chi phí giữa các lớp **S3 Glacier Storage Class**.<br>- Thực hành cấu hình **S3 Access Point**, **Lifecycle Rule** và kiểm tra quá trình chuyển đổi Storage Class. | 01/05/2026 | 01/05/2026 | [Amazon S3 Access Points](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html)<br>[S3 Storage Classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html)<br>[S3 Lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html) |
+| 6 | **Tìm hiểu Amazon EFS và tổng hợp thực hành**<br>- Tìm hiểu mô hình **File Storage** của **Amazon EFS**.<br>- Tạo **EFS File System** và **Mount Target**.<br>- Kết nối EFS với EC2 Instance.<br>- Kiểm tra khả năng đọc và ghi dữ liệu trên EFS.<br>- So sánh **EBS**, **S3** và **EFS**.<br>- Xóa các tài nguyên không còn sử dụng sau khi thực hành. | 02/05/2026 | 02/05/2026 | [Amazon EFS](https://docs.aws.amazon.com/efs/) |
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Kết quả đạt được trong tuần:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+- Triển khai và quản lý được **EC2 Instance**, **IAM Role**, **SSH** và **SSM**.
+- Hiểu và thực hành được **EC2 Auto Scaling** và **Amazon Lightsail**.
+- Tạo, gắn và sao lưu được **EBS Volume**.
+- Quản lý được **S3 Bucket**, **Object**, **Static Website Hosting** và **CORS**.
+- Hiểu **S3 Access Point**, **Storage Class**, **Lifecycle Rule** và **Cold Storage**.
+- Kết nối và sử dụng được **Amazon EFS** với EC2.
+- Phân biệt được **Block Storage**, **Object Storage** và **File Storage**.
