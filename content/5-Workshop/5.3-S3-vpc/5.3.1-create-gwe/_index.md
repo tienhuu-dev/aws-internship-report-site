@@ -9,10 +9,6 @@ pre : " <b> 5.3.1 </b> "
 1. Open the [Amazon VPC console](https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#Home:)
 2. In the navigation pane, choose **Endpoints**, then click **Create Endpoint**:
 
-{{% notice note %}}
-You will see **6 existing VPC endpoints** that support **AWS Systems Manager (SSM)**. These endpoints were deployed automatically by the **CloudFormation Templates** for this workshop.
-{{% /notice %}}
-
 ![endpoint](/images/5-Workshop/5.3-S3-vpc/endpoints.png)
 
 3. In the Create endpoint console:

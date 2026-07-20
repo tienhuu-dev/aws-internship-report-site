@@ -6,14 +6,9 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Trong phần **Worklog**, tôi tổng hợp toàn bộ quá trình học tập và thực hành trong 12 tuần thực tập tại chương trình **First Cloud AI Journey** với vai trò **Cloud Infrastructure Engineer** trong dự án **CloudDoc**. Nội dung được trình bày theo cùng một cấu trúc gồm Mục tiêu tuần, Các công việc triển khai trong tuần và Kết quả đạt được, nhằm bám sát yêu cầu của mẫu báo cáo thực tập.
 
-**Trong trang này** bạn sẽ cần giới thiệu worklog của bạn **như thế nào**? Bạn hoàn thành chương trình trong vòng **bao nhiêu tuần**? Bạn **đã làm gì** trong các tuần đó?
-
-
-Thông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:
+Toàn bộ quá trình được sắp xếp từ giai đoạn làm quen với **AWS**, học các kiến thức và lab hạ tầng cơ bản, tham gia workshop và các hoạt động tại văn phòng, đến việc triển khai, cấu hình và quản lý hạ tầng **AWS Cloud** cho hệ thống **CloudDoc**. Công việc bao gồm thiết lập tài nguyên AWS, cấu hình mạng và bảo mật, quản lý quyền truy cập, giám sát hệ thống, tối ưu chi phí và hỗ trợ quá trình triển khai ứng dụng. Tiến độ thực tập được chia theo từng tuần như sau:
 
 **Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản trong AWS](1.1-week1/)
 

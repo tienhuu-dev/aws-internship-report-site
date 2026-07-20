@@ -5,55 +5,35 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 1:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Làm quen với các dịch vụ AWS cốt lõi và xây dựng nền tảng về điện toán đám mây.
+- Tìm hiểu chiến lược thiết lập tài khoản AWS và quản lý chi phí bằng **AWS Budgets**.
+- Thực hành quản lý danh tính và quyền truy cập với **AWS IAM**.
+- Nắm được kiến trúc mạng cơ bản trên AWS thông qua **Amazon VPC**.
+- Triển khai ứng dụng trên **Amazon EC2**.
+- Tìm hiểu cách sử dụng **IAM Role** để cấp quyền cho ứng dụng truy cập các dịch vụ AWS.
+- Làm quen với việc tạo và quản lý cơ sở dữ liệu bằng **Amazon RDS**.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc thực hiện trong tuần này:
 
+| Ngày | Nội dung thực hiện | Ngày bắt đầu | Ngày kết thúc | Tài liệu tham khảo |
+| :-- | :-- | :-- | :-- | :-- |
+| 1 | **Thiết lập tài khoản và quản lý chi phí trên AWS**<br>- Làm quen với AWS Management Console.<br>- Tìm hiểu chiến lược quản lý tài khoản AWS.<br>- Thiết lập ngân sách và ngưỡng cảnh báo bằng **AWS Budgets**. | 17/04/2026 | 17/04/2026 | [AWS Free Tier](https://000001.awsstudygroup.com/vi/)<br>[AWS Budget](https://000007.awsstudygroup.com/vi/) |
+| 2 | **Quản trị quyền truy cập với AWS IAM**<br>- Tìm hiểu IAM Users, Groups và Policies.<br>- Thực hành cấp quyền truy cập theo nguyên tắc tối thiểu.<br>- Tìm hiểu vai trò của MFA trong bảo vệ tài khoản. | 20/04/2026 | 20/04/2026 | [AWS IAM](https://000002.awsstudygroup.com/vi/) |
+| 3 | **Triển khai hạ tầng mạng với Amazon VPC**<br>- Tìm hiểu VPC, Subnet, Route Table và Internet Gateway.<br>- Phân biệt Public Subnet và Private Subnet.<br>- Tìm hiểu cách tổ chức mạng cho ứng dụng AWS. | 21/04/2026 | 21/04/2026 | [AWS VPC](https://000003.awsstudygroup.com/vi/) |
+| 4 | **Triển khai ứng dụng trên Amazon EC2**<br>- Khởi tạo EC2 Instance.<br>- Cấu hình Key Pair và Security Group.<br>- Kết nối và kiểm tra hoạt động của máy chủ.<br>- Dọn dẹp tài nguyên sau khi hoàn thành bài thực hành. | 22/04/2026 | 22/04/2026 | [Amazon EC2](https://000004.awsstudygroup.com/vi/) |
+| 5 | **IAM Role và Amazon RDS**<br>- Tìm hiểu cách sử dụng IAM Role để cấp quyền cho ứng dụng.<br>- Tạo cơ sở dữ liệu trên **Amazon RDS**.<br>- Kiểm tra kết nối và xóa tài nguyên sau khi hoàn thành. | 23/04/2026 | 23/04/2026 | [Amazon RDS](https://000005.awsstudygroup.com/vi/) |
 
-### Kết quả đạt được tuần 1:
+### Kết quả đạt được trong tuần:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+- Xây dựng được nền tảng kiến thức về các dịch vụ AWS cốt lõi.
+- Hiểu cách thiết lập ngân sách và kiểm soát chi phí bằng **AWS Budgets**.
+- Nắm được cách quản lý người dùng, chính sách và quyền truy cập bằng **AWS IAM**.
+- Hiểu kiến trúc cơ bản của **Amazon VPC**.
+- Thực hành khởi tạo, cấu hình và quản lý một **Amazon EC2 Instance**.
+- Hiểu vai trò của **IAM Role** trong việc cấp quyền an toàn cho ứng dụng.
+- Tạo và quản lý được cơ sở dữ liệu trên **Amazon RDS**.
+- Hoàn thành các workshop thực hành và biết cách dọn dẹp tài nguyên AWS sau khi sử dụng.
 

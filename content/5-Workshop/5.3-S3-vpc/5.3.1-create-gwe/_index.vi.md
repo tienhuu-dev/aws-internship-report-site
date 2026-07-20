@@ -9,10 +9,6 @@ pre : " <b> 5.3.1 </b> "
 1. Mở [Amazon VPC console](https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#Home:)
 2. Trong thanh điều hướng, chọn **Endpoints**, click **Create Endpoint**:
 
-{{% notice note %}}
-Bạn sẽ thấy 6 điểm cuối VPC hiện có hỗ trợ AWS Systems Manager (SSM). Các điểm cuối này được Mẫu CloudFormation triển khai tự động cho workshop này.
-{{% /notice %}}
-
 ![endpoint](/images/5-Workshop/5.3-S3-vpc/endpoints.png)
 
 3. Trong Create endpoint console:

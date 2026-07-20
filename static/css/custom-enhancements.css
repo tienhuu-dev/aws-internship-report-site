@@ -51,22 +51,6 @@ button:focus-visible {
   box-shadow: 0 8px 24px rgba(28, 34, 42, 0.12);
 }
 
-#body-inner table {
-  display: block;
-  overflow-x: auto;
-  box-shadow: 0 10px 24px rgba(28, 34, 42, 0.08);
-  white-space: nowrap;
-}
-
-#body-inner td,
-#body-inner th {
-  padding: 0.75rem 1rem;
-}
-
-#body-inner th {
-  background: var(--enhancement-soft-surface-color);
-}
-
 #body-inner a[data-external-link="true"]::after {
   content: " ↗";
   font-size: 0.78em;

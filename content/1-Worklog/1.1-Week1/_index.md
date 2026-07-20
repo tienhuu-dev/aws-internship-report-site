@@ -5,53 +5,35 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 1 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Become familiar with core AWS services and build a foundation in cloud computing.
+- Learn AWS account setup strategies and cost management with **AWS Budgets**.
+- Practice identity and access management with **AWS IAM**.
+- Understand the basic AWS network architecture through **Amazon VPC**.
+- Deploy an application on **Amazon EC2**.
+- Learn how to use an **IAM Role** to grant applications access to AWS services.
+- Become familiar with creating and managing databases using **Amazon RDS**.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week:
 
+| Day | Tasks | Start Date | Completion Date | Reference Material |
+| :-- | :-- | :-- | :-- | :-- |
+| 1 | **AWS Account Setup and Cost Management**<br>- Become familiar with the AWS Management Console.<br>- Learn AWS account management strategies.<br>- Configure a budget and alert thresholds using **AWS Budgets**. | 17/04/2026 | 17/04/2026 | [AWS Free Tier](https://000001.awsstudygroup.com/vi/)<br>[AWS Budget](https://000007.awsstudygroup.com/vi/) |
+| 2 | **Access Management with AWS IAM**<br>- Learn about IAM Users, Groups, and Policies.<br>- Practice granting access according to the least-privilege principle.<br>- Learn the role of MFA in account protection. | 20/04/2026 | 20/04/2026 | [AWS IAM](https://000002.awsstudygroup.com/vi/) |
+| 3 | **Network Infrastructure Deployment with Amazon VPC**<br>- Learn about VPC, Subnets, Route Tables, and Internet Gateways.<br>- Distinguish between Public Subnets and Private Subnets.<br>- Learn how to organize a network for an AWS application. | 21/04/2026 | 21/04/2026 | [AWS VPC](https://000003.awsstudygroup.com/vi/) |
+| 4 | **Application Deployment on Amazon EC2**<br>- Launch an EC2 Instance.<br>- Configure a Key Pair and Security Group.<br>- Connect to and verify the server.<br>- Clean up resources after completing the lab. | 22/04/2026 | 22/04/2026 | [Amazon EC2](https://000004.awsstudygroup.com/vi/) |
+| 5 | **IAM Roles and Amazon RDS**<br>- Learn how to use IAM Roles to grant permissions to applications.<br>- Create a database on **Amazon RDS**.<br>- Verify the connection and delete resources after completion. | 23/04/2026 | 23/04/2026 | [Amazon RDS](https://000005.awsstudygroup.com/vi/) |
 
-### Week 1 Achievements:
+### Results Achieved During the Week:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+- Built a foundation in core AWS services.
+- Learned how to configure a budget and manage costs with **AWS Budgets**.
+- Understood how to manage users, policies, and permissions with **AWS IAM**.
+- Understood the basic architecture of **Amazon VPC**.
+- Successfully practiced launching, configuring, and managing an **Amazon EC2 Instance**.
+- Understood the role of an **IAM Role** in securely granting permissions to applications.
+- Created and managed a database on **Amazon RDS**.
+- Completed the hands-on workshops and learned how to clean up AWS resources after use.
 
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...

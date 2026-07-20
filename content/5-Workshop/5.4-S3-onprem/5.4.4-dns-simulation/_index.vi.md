@@ -92,9 +92,6 @@ Bạn đã tạo thành công resolver forwarding rule.
 ```
 dig +short s3.us-east-1.amazonaws.com 
 ```
-{{% notice note %}}
-Các địa chỉ IP được trả về là các địa chỉ IP VPC enpoint, KHÔNG phải là các địa chỉ IP Resolver mà bạn đã dán từ trình chỉnh sửa văn bản của mình. Các địa chỉ IP của  Resolver endpoint  và  VPC endpoin trông giống nhau vì chúng đều từ khối CIDR VPC Cloud.
-{{% /notice %}}
 
 ![create rule](/images/5-Workshop/5.4-S3-onprem/dig.png)
 
@@ -113,6 +110,5 @@ aws s3 ls --endpoint-url https://s3.us-east-1.amazonaws.com
 5. Kết thúc phiên làm việc của Session Manager của bạn:
 
 ![create rule](/images/5-Workshop/5.4-S3-onprem/terminal.png)
-
 
 Trong phần này, bạn đã tạo một  **Interface Endpoint**  cho Amazon S3. Điểm cuối này có thể được truy cập từ on-premises thông qua Site-to-Site VPN hoặc AWS Direct Connect. Các điểm cuối Route 53 Resolver outbound giả lập chuyển tiếp các yêu cầu DNS từ on-premises đến một Private Hosted Zone đang chạy trên đám mây. Các điểm cuối Route 53 inbound nhận yêu cầu giải quyết và trả về một phản hồi chứa địa chỉ IP của  **Interface Endpoint**  VPC. Sử dụng DNS để giải quyết các địa chỉ IP của điểm cuối cung cấp tính sẵn sàng cao trong trường hợp một Availability Zone gặp sự cố.
