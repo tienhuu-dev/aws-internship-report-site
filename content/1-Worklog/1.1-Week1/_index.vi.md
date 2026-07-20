@@ -6,110 +6,34 @@ chapter: false
 pre: " <b> 1.1. </b> "
 ---
 
-## Báo cáo Tuần 1 (Tóm tắt)
+### Mục tiêu tuần 1:
 
-### 1) Mục tiêu
-- Kích hoạt tài khoản AWS Free Tier an toàn.
-- Hoàn thành chuỗi nhiệm vụ nhận **$100 AWS credit**.
-- Thiết lập cơ chế phòng thủ chi phí nhiều lớp.
+- Làm quen với các dịch vụ AWS cốt lõi và xây dựng nền tảng về điện toán đám mây.
+- Tìm hiểu chiến lược thiết lập tài khoản AWS và quản lý chi phí bằng **AWS Budgets**.
+- Thực hành quản lý danh tính và quyền truy cập với **AWS IAM**.
+- Nắm được kiến trúc mạng cơ bản trên AWS thông qua **Amazon VPC**.
+- Triển khai ứng dụng trên **Amazon EC2**.
+- Tìm hiểu cách sử dụng **IAM Role** để cấp quyền cho ứng dụng truy cập các dịch vụ AWS.
+- Làm quen với việc tạo và quản lý cơ sở dữ liệu bằng **Amazon RDS**.
 
-### 2) Hạng mục đã thực hiện
+### Các công việc thực hiện trong tuần này:
 
-#### 2.1 Onboarding và thực hành dịch vụ
-| Nhiệm vụ | Dịch vụ | Kết quả |
-|---|---|---|
-| 1 | EC2 | Tạo test instance + key pair + security group, sau đó terminate |
-| 2 | Bedrock | Tương tác thành công Claude 3 Haiku |
-| 3 | Lambda | Tạo web app từ blueprint, sau đó xóa function |
-| 4 | RDS Aurora PostgreSQL | Tạo DB cluster, chờ `Available`, sau đó xóa |
-| 5 | AWS Budgets | Tạo ngân sách `My Monthly Cost Budget` |
+| Ngày | Nội dung thực hiện | Ngày bắt đầu | Ngày kết thúc | Tài liệu tham khảo |
+| :-- | :-- | :-- | :-- | :-- |
+| 1 | **Thiết lập tài khoản và quản lý chi phí trên AWS**<br>- Làm quen với AWS Management Console.<br>- Tìm hiểu chiến lược quản lý tài khoản AWS.<br>- Thiết lập ngân sách và ngưỡng cảnh báo bằng **AWS Budgets**. | 17/04/2026 | 17/04/2026 | [AWS Free Tier](https://000001.awsstudygroup.com/vi/)<br>[AWS Budget](https://000007.awsstudygroup.com/vi/) |
+| 2 | **Quản trị quyền truy cập với AWS IAM**<br>- Tìm hiểu IAM Users, Groups và Policies.<br>- Thực hành cấp quyền truy cập theo nguyên tắc tối thiểu.<br>- Tìm hiểu vai trò của MFA trong bảo vệ tài khoản. | 20/04/2026 | 20/04/2026 | [AWS IAM](https://000002.awsstudygroup.com/vi/) |
+| 3 | **Triển khai hạ tầng mạng với Amazon VPC**<br>- Tìm hiểu VPC, Subnet, Route Table và Internet Gateway.<br>- Phân biệt Public Subnet và Private Subnet.<br>- Tìm hiểu cách tổ chức mạng cho ứng dụng AWS. | 21/04/2026 | 21/04/2026 | [AWS VPC](https://000003.awsstudygroup.com/vi/) |
+| 4 | **Triển khai ứng dụng trên Amazon EC2**<br>- Khởi tạo EC2 Instance.<br>- Cấu hình Key Pair và Security Group.<br>- Kết nối và kiểm tra hoạt động của máy chủ.<br>- Dọn dẹp tài nguyên sau khi hoàn thành bài thực hành. | 22/04/2026 | 22/04/2026 | [Amazon EC2](https://000004.awsstudygroup.com/vi/) |
+| 5 | **IAM Role và Amazon RDS**<br>- Tìm hiểu cách sử dụng IAM Role để cấp quyền cho ứng dụng.<br>- Tạo cơ sở dữ liệu trên **Amazon RDS**.<br>- Kiểm tra kết nối và xóa tài nguyên sau khi hoàn thành. | 23/04/2026 | 23/04/2026 | [Amazon RDS](https://000005.awsstudygroup.com/vi/) |
 
-#### 2.2 Thiết lập ngân sách
-- **Hạn mức:** $200/tháng
-- **Loại:** Fixed budget
-- **Chu kỳ:** Monthly
-- **Cơ sở tính:** Unblended costs
+### Kết quả đạt được trong tuần:
 
-**Ngưỡng cảnh báo (Actual cost):**
-- 12.5% ($25)
-- 25% ($50)
-- 50% ($100)
-- 75% ($150)
-
-#### 2.3 Giám sát chi phí hằng ngày
-- Theo dõi **Cost Explorer**: Daily Spend + Service Breakdown.
-- Bật **Cost Anomaly Detection** để phát hiện chi phí bất thường.
-
-#### 2.4 Tự động hóa dọn dẹp trên CloudShell
-**3 bước ngắn gọn:**
-1. Tạo/sửa `cleanup.sh` bằng Nano.
-2. Cấp quyền chạy: `chmod +x cleanup.sh`.
-3. Thực thi: `./cleanup.sh` và kiểm tra log.
-
-**Script xử lý:**
-- Dừng EC2 `running` có tag `AutoShutdown=yes`.
-- Xóa EBS `available` cũ hơn 7 ngày.
-
-```bash
-#!/usr/bin/env bash
-# Kích hoạt chế độ phòng thủ Bash nghiêm ngặt
-set -euo pipefail
-
-echo "========================================="
-echo "🔄 BẮT ĐẦU QUÁ TRÌNH DỌN DẸP TÀI KHOẢN AWS"
-echo "========================================="
-
-echo "🔎 1. Đang quét các máy ảo EC2 có gắn tag AutoShutdown=yes..."
-INSTANCE_IDS=$(aws ec2 describe-instances   --filters "Name=tag:AutoShutdown,Values=yes" "Name=instance-state-name,Values=running"   --query "Reservations[].Instances[].InstanceId"   --output text)
-
-if [ -n "${INSTANCE_IDS}" ] && [ "${INSTANCE_IDS}" != "None" ]; then
-  echo "   ➔ Tìm thấy các máy ảo: ${INSTANCE_IDS}"
-  echo "   🛑 Đang tiến hành tắt (Stop) các máy ảo trên..."
-  aws ec2 stop-instances --instance-ids ${INSTANCE_IDS} --query 'StoppingInstances[*].[InstanceId,CurrentState.Name]' --output table
-else
-  echo "   ➔ Không tìm thấy máy ảo nào đang chạy hợp lệ để tắt."
-fi
-
-echo "-----------------------------------------"
-
-echo "🔎 2. Đang quét các ổ đĩa EBS bỏ hoang (available)..."
-CUTOFF=$(date -u -d "7 days ago" +"%Y-%m-%dT%H:%M:%SZ")
-echo "   ➔ Chỉ quét các ổ đĩa được tạo trước thời điểm: ${CUTOFF}"
-
-VOLUME_IDS=$(aws ec2 describe-volumes   --filters "Name=status,Values=available"   --query "Volumes[?CreateTime<=\`${CUTOFF}\`].VolumeId"   --output text)
-
-if [ -n "${VOLUME_IDS}" ] && [ "${VOLUME_IDS}" != "None" ]; then
-  echo "   ➔ Tìm thấy các ổ đĩa bỏ hoang: ${VOLUME_IDS}"
-  for vol in ${VOLUME_IDS}; do
-    echo "   💥 Đang xóa ổ đĩa: ${vol} ..."
-    aws ec2 delete-volume --volume-id "${vol}"
-    echo "     ➔ Đã xóa thành công!"
-  done
-else
-  echo "   ➔ Không có ổ đĩa rảnh rỗi nào cũ hơn 7 ngày cần xóa."
-fi
-
-echo "========================================="
-echo "✅ QUÁ TRÌNH DỌN DẸP HOÀN TẤT!"
-echo "========================================="
-```
-
-### 3) Ghi chú kỹ thuật ngắn
-- **Actual Cost:** Chi phí đã phát sinh, dùng cho cảnh báo ngưỡng cứng.
-- **Forecasted Cost:** Chi phí dự báo cuối kỳ, dùng để cảnh báo sớm.
-- `chmod +x`: cấp quyền thực thi script.
-- Hệ thống trống không báo lỗi là hành vi bình thường (**No news is good news**).
-
-### 4) Kết quả
-- Hoàn thành workflow Tuần 1 và nhận **$100 credit**.
-- Cơ chế phòng thủ chi phí đã vận hành: Budgets + Monitoring + Cleanup script.
-
-
-### 5) Trạng thái triển khai ChatOps Cost Alert (Hoàn tất)
-
-![Sơ đồ pipeline Billing Alarm ChatOps](/images/billing-alarm-pipeline.drawio.png)
-- Đã triển khai thành công pipeline: **CloudWatch Billing Alarm → SNS → Lambda → Discord Webhook**.
-- Đã test thành công bằng **SNS Publish** và **Force Alarm** (`OK -> ALARM`).
-- Discord channel đã nhận cảnh báo đầy đủ thông tin: Alarm name, thời gian, topic ARN, payload chi tiết.
-- Đã bổ sung giám sát lỗi Lambda (Errors > 0) để theo dõi tính ổn định của kênh cảnh báo.
+- Xây dựng được nền tảng kiến thức về các dịch vụ AWS cốt lõi.
+- Hiểu cách thiết lập ngân sách và kiểm soát chi phí bằng **AWS Budgets**.
+- Nắm được cách quản lý người dùng, chính sách và quyền truy cập bằng **AWS IAM**.
+- Hiểu kiến trúc cơ bản của **Amazon VPC**.
+- Thực hành khởi tạo, cấu hình và quản lý một **Amazon EC2 Instance**.
+- Hiểu vai trò của **IAM Role** trong việc cấp quyền an toàn cho ứng dụng.
+- Tạo và quản lý được cơ sở dữ liệu trên **Amazon RDS**.
+- Hoàn thành các workshop thực hành và biết cách dọn dẹp tài nguyên AWS sau khi sử dụng.
 

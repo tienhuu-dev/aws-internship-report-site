@@ -6,9 +6,9 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-**On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?
+In the **Worklog** section, I summarize my learning and practical experience during the 12-week internship in the **First Cloud AI Journey** program as a **Cloud Infrastructure Engineer** for the **CloudDoc** project. Each week follows the same structure, including weekly objectives, tasks carried out, and achievements, in accordance with the internship report requirements.
 
-Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
+The journey is organized from learning **AWS** fundamentals, completing infrastructure labs, and participating in workshops and office activities, to deploying, configuring, and managing **AWS Cloud** infrastructure for the **CloudDoc** system. My responsibilities included setting up AWS resources, configuring networking and security, managing access permissions, monitoring the system, optimizing costs, and supporting application deployment. The internship progress is divided into the following weeks:
 
 **Week 1:** [Getting familiar with AWS and basic AWS services](1.1-week1/)
 
