@@ -8,45 +8,37 @@ pre: " <b> 1.9. </b> "
 
 ### Week 9 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Analyze the project requirements and design a three-tier cloud architecture.
+* Identify and select suitable AWS services for each architectural layer.
+* Create, review, and finalize the cloud architecture diagram based on feedback from FCAJ group members.
+* Estimate the total infrastructure cost of the proposed architecture.
+* Deploy the foundational AWS networking and storage components required for the project.
+* Configure network connectivity, traffic control, private access to Amazon S3, and storage resources.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | Complete the design of the cloud architecture diagram based on a three-tier architecture for the project.                                                                                            | 06/15/2026 | 06/15/2026      |                                           |
+| 2   | Analyze the project requirements and define the components of the three-tier cloud architecture, including the presentation, application, and data layers.                                                  | 06/16/2026 | 06/16/2026      |                                           |
+| 3   | Select suitable AWS services for each architectural layer and create the initial cloud architecture diagram, including the main data flow between components.                                  | 06/17/2026 | 06/17/2026      |                                           |
+| 4   | Finalize the cloud architecture diagram based on feedback from FCAJ group members <br> Calculate the total infrastructure cost.                                                                                                                          | 06/18/2026 | 06/18/2026      |                                           |
+| 5   | Deploy the core **AWS networking infrastructure** for the project. Create and configure the **Amazon VPC**, including the required **public and private subnets** and **route tables**. Attach an **Internet Gateway** to provide Internet connectivity for the public network components. Configure **Security Groups** to control inbound and outbound traffic between the deployed resources according to the proposed three-tier architecture. | 06/19/2026 | 06/19/2026      |                                           |
+| 6   | Deploy the additional networking and storage components required by the cloud architecture. Configure a **NAT Instance** using an **EC2 instance** deployed in the public subnet to provide outbound Internet access for resources in private subnets. Create an **S3 Gateway Endpoint** to enable private connectivity from the VPC to Amazon S3 without routing S3 traffic through the public Internet. Configure separate **S3 Buckets** for static website hosting and file uploads, with the purpose of keeping website content and uploaded data independently managed. | 06/20/2026 | 06/20/2026      |                                           |
 
 ### Week 9 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Completed the design of the project's cloud architecture diagram based on a three-tier architecture.
 
-* Successfully created and configured an AWS Free Tier account.
+* Analyzed the project requirements and defined the components of the three-tier cloud architecture.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Selected suitable AWS services for each architectural layer and created the initial cloud architecture diagram.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Finalized the architecture diagram based on feedback and recommendations from FCAJ group members and calculated the estimated total cost of the proposed cloud infrastructure.
 
-* Used AWS CLI to perform basic operations such as:
+* Successfully deployed the core networking components, including **Amazon VPC**, **public and private subnets**, **route tables**, **Internet Gateway**, and **Security Groups**.
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+* Deployed a **NAT Instance** using an **EC2 instance** in the public subnet to provide outbound Internet access for resources in private subnets.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Created an **S3 Gateway Endpoint** to enable private connectivity from the VPC to Amazon S3 without routing S3 traffic through the public Internet.
+
+* Configured separate **S3 Buckets** for static website hosting and file uploads to manage website content and uploaded data independently.
