@@ -8,45 +8,27 @@ pre: " <b> 1.5. </b> "
 
 ### Week 5 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Manage application secrets securely with **AWS Secrets Manager** and **AWS KMS**.
+- Define and provision AWS resources as code with **AWS CloudFormation**.
+- Build and test application source code with **AWS CodeBuild**.
+- Automate build and deployment workflows with **AWS CodePipeline**.
+- Build a CI/CD pipeline for the serverless application developed in Week 4.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+
+| Day | Task | Start Date | Completion Date | Reference Material |
+| :-- | :-- | :-- | :-- | :-- |
+| 1 | **Study AWS Secrets Manager and AWS KMS**<br>- Learn how to store database credentials, API keys, and application secrets securely.<br>- Create and retrieve a secret using IAM permissions.<br>- Learn encryption at rest with AWS KMS.<br>- Replace hard-coded credentials with runtime secret retrieval. | 18/05/2026 | 18/05/2026 | [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/)<br>[AWS KMS](https://docs.aws.amazon.com/kms/)<br>[AWS Workshop 000096](https://000096.awsstudygroup.com/vi/)<br>[AWS Workshop 000033](https://000033.awsstudygroup.com/vi/) |
+| 2 | **Study AWS CloudFormation**<br>- Learn Templates, Stacks, Parameters, Outputs, Resources, and Change Sets.<br>- Write a basic YAML template.<br>- Deploy and update AWS resources through a CloudFormation Stack.<br>- Delete the Stack and review resource cleanup. | 19/05/2026 | 19/05/2026 | [AWS CloudFormation](https://docs.aws.amazon.com/cloudformation/)<br>[How CloudFormation works](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-overview.html)<br>[AWS CloudFormation Workshop](https://000037.awsstudygroup.com/vi/) |
+| 3 | **Study AWS CodeBuild**<br>- Learn build projects, source configuration, environment, build phases, and artifacts.<br>- Create a `buildspec.yml` file.<br>- Run build and test commands.<br>- Review build logs and generated artifacts. | 20/05/2026 | 20/05/2026 | [AWS CodeBuild](https://docs.aws.amazon.com/codebuild/)<br>[Build commands](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref.html)<br>[AWS Workshop 000023](https://000023.awsstudygroup.com/vi/) |
+| 4 | **Study AWS CodePipeline**<br>- Learn Source, Build, Deploy, Stage, Action, and Pipeline concepts.<br>- Connect a source repository to CodePipeline.<br>- Add CodeBuild as a build stage.<br>- Review pipeline execution and failure handling. | 21/05/2026 | 21/05/2026 | [AWS CodePipeline](https://docs.aws.amazon.com/codepipeline/)<br>[CodeBuild with CodePipeline](https://docs.aws.amazon.com/codebuild/latest/userguide/how-to-create-pipeline.html)<br>[AWS Workshop 000023](https://000023.awsstudygroup.com/vi/) |
+| 5 | **Perform a CI/CD Hands-on Lab**<br>- Build a pipeline for **API Gateway → Lambda → DynamoDB**.<br>- Use CodeBuild to validate the source code.<br>- Use CloudFormation to provision or update resources.<br>- Store sensitive configuration in Secrets Manager.<br>- Verify deployment through API requests and CloudWatch Logs.<br>- Clean up temporary resources after the lab. | 22/05/2026 | 22/05/2026 | [AWS CodePipeline](https://docs.aws.amazon.com/codepipeline/)<br>[AWS Serverless Workshops](https://workshops.serverlessland.com/) |
 
 ### Week 5 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Stored and retrieved application secrets securely using **AWS Secrets Manager** and understood the role of **AWS KMS**.
+- Created a CloudFormation template and deployed AWS resources through a Stack.
+- Configured **AWS CodeBuild** to run build and test commands and produce artifacts.
+- Created an **AWS CodePipeline** with source and build stages.
+- Completed a CI/CD Hands-on Lab for a serverless application using **API Gateway, Lambda, DynamoDB, CloudFormation, CodeBuild, and CodePipeline**.
+- Practiced reviewing build logs, deployment results, IAM permissions, and resource cleanup.
