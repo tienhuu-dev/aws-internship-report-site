@@ -8,46 +8,39 @@ pre: " <b> 1.9. </b> "
 
 ### Mục tiêu tuần 9:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Phân tích yêu cầu dự án và thiết kế kiến trúc Cloud 3 lớp.
+* Xác định và lựa chọn các dịch vụ AWS phù hợp cho từng lớp kiến trúc.
+* Xây dựng, kiểm tra và hoàn thiện sơ đồ kiến trúc Cloud dựa trên nhận xét của các anh chị trong group FCAJ.
+* Tính toán tổng chi phí dự kiến của kiến trúc hạ tầng.
+* Triển khai các thành phần networking và storage nền tảng cần thiết cho dự án.
+* Cấu hình kết nối mạng, kiểm soát traffic, kết nối riêng tư đến Amazon S3 và các tài nguyên lưu trữ.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| Ngày | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | Hoàn thành thiết kế sơ đồ kiến trúc Cloud theo mô hình kiến trúc 3 lớp cho dự án.                                                                                                       | 15/06/2026   | 15/06/2026      |                                           |
+| 2   | Phân tích yêu cầu dự án và xác định các thành phần trong kiến trúc Cloud 3 lớp, gồm presentation layer, application layer và data layer.                                                  | 16/06/2026   | 16/06/2026      |                                           |
+| 3   | Lựa chọn các dịch vụ AWS phù hợp cho từng lớp kiến trúc và xây dựng sơ đồ kiến trúc Cloud ban đầu, bao gồm luồng dữ liệu chính giữa các thành phần.                                  | 17/06/2026   | 17/06/2026      |                                           |
+| 4   | Hoàn thiện sơ đồ kiến trúc Cloud dựa trên nhận xét, góp ý của các anh chị trong group FCAJ <br> Tính tổng chi phí hạ tầng.                                                                                                          | 18/06/2026   | 18/06/2026      |                                           |
+| 5   | Triển khai các thành phần cốt lõi của **hạ tầng mạng AWS** cho dự án. Tạo và cấu hình **Amazon VPC**, bao gồm các **public subnet**, **private subnet** và **route table** cần thiết. Gắn **Internet Gateway** để cung cấp kết nối Internet cho các thành phần thuộc mạng public. Cấu hình **Security Groups** nhằm kiểm soát traffic inbound và outbound giữa các tài nguyên theo kiến trúc 3 lớp đã đề xuất. | 19/06/2026   | 19/06/2026      |                                           |
+| 6   | Triển khai các thành phần networking và storage bổ sung theo kiến trúc Cloud đã thiết kế. Cấu hình **NAT Instance** bằng một **EC2 instance** được triển khai trong public subnet nhằm cung cấp kết nối Internet outbound cho các tài nguyên trong private subnet. Tạo **S3 Gateway Endpoint** để cho phép VPC kết nối riêng tư đến Amazon S3 mà không cần định tuyến traffic S3 qua Internet công cộng. Cấu hình các **S3 Buckets** riêng biệt cho static website hosting và file upload, giúp quản lý độc lập nội dung website và dữ liệu được tải lên. | 20/06/2026   | 20/06/2026      |                                           |
 
 ### Kết quả đạt được tuần 9:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hoàn thành thiết kế sơ đồ kiến trúc Cloud theo mô hình kiến trúc 3 lớp cho dự án.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Phân tích yêu cầu dự án và xác định các thành phần trong kiến trúc Cloud 3 lớp.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Lựa chọn các dịch vụ AWS phù hợp cho từng lớp kiến trúc và xây dựng sơ đồ kiến trúc Cloud ban đầu.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Hoàn thiện sơ đồ kiến trúc dựa trên nhận xét, góp ý của các anh chị trong group FCAJ và tính toán tổng chi phí dự kiến của hạ tầng Cloud.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Hoàn thành triển khai các thành phần hạ tầng mạng cốt lõi, gồm **Amazon VPC**, **public subnet**, **private subnet**, **route table**, **Internet Gateway** và **Security Groups**.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Triển khai **NAT Instance** bằng một **EC2 instance** trong public subnet để cung cấp kết nối Internet outbound cho các tài nguyên trong private subnet.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Tạo **S3 Gateway Endpoint** để VPC kết nối riêng tư đến Amazon S3 mà không cần định tuyến traffic S3 qua Internet công cộng.
+
+* Cấu hình các **S3 Buckets** riêng biệt cho static website hosting và file upload nhằm quản lý độc lập nội dung website và dữ liệu được tải lên.
+
 
