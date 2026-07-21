@@ -12,24 +12,24 @@ Toàn bộ quá trình được sắp xếp từ giai đoạn làm quen với **
 
 **Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản trong AWS](1.1-week1/)
 
-**Tuần 2:** [Làm công việc A...](1.2-week2/)
+**Tuần 2:** [Tìm hiểu Compute và Storage với EC2, Auto Scaling, Lightsail, S3, EBS, EFS, Storage Gateway và Snow Family](1.2-week2/)
 
-**Tuần 3:** [Làm công việc B...](1.3-week3/)
+**Tuần 3:** [Tìm hiểu CloudFront, Networking nâng cao, ALB, RDS, DynamoDB và ElastiCache](1.3-week3/)
 
-**Tuần 4:** [Làm công việc C...](1.4-week4/)
+**Tuần 4:** [Tìm hiểu Lambda, API Gateway, SQS, SNS, CloudWatch và triển khai Serverless Lab](1.4-week4/)
 
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
+**Tuần 5:** [Tìm hiểu Secrets Manager, KMS, CloudFormation, CodeBuild, CodePipeline và CI/CD](1.5-week5/)
 
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
+**Tuần 6:** [Tìm hiểu AWS Security và Containerization với Security Hub, GuardDuty, WAF, Cognito, ECR, ECS và Fargate](1.6-week6/)
 
-**Tuần 7:** [Làm công việc G...](1.7-week7/)
+**Tuần 7:** [Tìm hiểu Route 53, HTTPS, monitoring, governance, event-driven serverless, backup, cost optimization và Well-Architected Framework](1.7-week7/)
 
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
+**Tuần 8:** [Tìm hiểu AI/ML với Amazon Bedrock, SageMaker AI, Rekognition, Textract và Comprehend; cải thiện architecture diagram](1.8-week8/)
 
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
+**Tuần 9:** [Thiết kế kiến trúc Cloud 3 lớp và triển khai hạ tầng networking, NAT Instance và S3 cho CloudDoc](1.9-week9/)
 
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
+**Tuần 10:** [Triển khai RDS PostgreSQL, EC2 Application Servers, ALB, SQS, DLQ và S3 Event Notification](1.10-week10/)
 
-**Tuần 11:** [Làm công việc M...](1.11-week11/)
+**Tuần 11:** [Hoàn thiện CloudFront, CloudWatch, SNS, S3 Lifecycle và kiểm tra tích hợp tổng thể hạ tầng Cloud](1.11-week11/)
 
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+**Tuần 12:** [Kiểm thử, rà soát bảo mật, monitoring, tối ưu chi phí, tổng kết dự án và hoàn chỉnh báo cáo thực tập](1.12-week12/)
