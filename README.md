@@ -5,11 +5,10 @@
 </h3>
 
 <p align="center">
-  <a href="https://github.com/tienhuu-dev/aws-internship-report-site">
-    <img src="https://img.shields.io/badge/Repository-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub repository" />
-  </a>
-  <img src="https://img.shields.io/badge/Hugo-0.137.1-FF4088?style=for-the-badge&logo=hugo" alt="Hugo version" />
-  <img src="https://img.shields.io/badge/Status-Completed-2E7D32?style=for-the-badge" alt="Project status" />
+  <a href="https://github.com/tienhuu-dev/aws-internship-report-site/stargazers"><img src="https://img.shields.io/github/stars/tienhuu-dev/aws-internship-report-site?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/tienhuu-dev/aws-internship-report-site/actions/workflows/hugo.yml"><img src="https://github.com/tienhuu-dev/aws-internship-report-site/actions/workflows/hugo.yml/badge.svg" alt="Hugo build status" /></a>
+  <a href="https://tienhuu-aws.devlab.id.vn/"><img src="https://img.shields.io/badge/docs-GitHub_Pages-blue" alt="Published website" /></a>
+  <img src="https://img.shields.io/badge/Hugo-0.137.1-FF4088?logo=hugo" alt="Hugo version" />
 </p>
 
 ---
