@@ -9,14 +9,14 @@
     <img src="https://img.shields.io/badge/Repository-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub repository" />
   </a>
   <img src="https://img.shields.io/badge/Hugo-0.137.1-FF4088?style=for-the-badge&logo=hugo" alt="Hugo version" />
-  <img src="https://img.shields.io/badge/Status-In%20Development-0A66C2?style=for-the-badge" alt="Project status" />
+  <img src="https://img.shields.io/badge/Status-Completed-2E7D32?style=for-the-badge" alt="Project status" />
 </p>
 
 ---
 
 ## 👋 About This Repository
 
-This repository contains a Hugo-based static website for documenting my AWS internship learning journey, technical progress, weekly reports, workshop practice, self-evaluation, and feedback.
+This repository contains a bilingual Hugo-based static website for documenting my AWS internship learning journey, technical progress, weekly reports, workshop practice, self-evaluation, and feedback.
 
 The project is based on the FCJ workshop template and is customized as a personal report site for internship documentation.
 
@@ -27,7 +27,7 @@ The project is based on the FCJ workshop template and is customized as a persona
 - Document internship progress in a structured format.
 - Maintain weekly worklogs and learning outcomes.
 - Present AWS-related workshop practice and technical notes.
-- Keep a clean source branch for future GitHub Pages deployment.
+- Maintain a clean source branch for GitHub Pages deployment.
 - Provide mentors with a clear and reviewable report website.
 
 ---
@@ -36,7 +36,7 @@ The project is based on the FCJ workshop template and is customized as a persona
 
 <h3 align="left">Hi 👋, I'm Tien Huu</h3>
 
-- 🔭 I am currently working on **AWS Internship Report Site**.
+- 🔭 I am currently participating in the **FCAJ Bootcamp**.
 - 🌱 I am currently learning **AWS, Hugo, GitHub Pages, and technical documentation**.
 - 📝 I use this repository to document internship progress and cloud learning outcomes.
 - 💻 GitHub: [tienhuu-dev](https://github.com/tienhuu-dev)
@@ -58,6 +58,18 @@ The project is based on the FCJ workshop template and is customized as a persona
 - **Content Format:** Markdown
 - **Version Control:** Git, GitHub
 - **Deployment Target:** GitHub Pages
+
+---
+
+## 🌐 Published Website
+
+The website is published at:
+
+```text
+https://tienhuu-aws.devlab.id.vn/
+```
+
+The site supports English and Vietnamese content through Hugo language files using the `.vi.md` suffix.
 
 ---
 
@@ -110,7 +122,7 @@ http://localhost:1313/
 Generate the static website:
 
 ```powershell
-hugo
+hugo --minify
 ```
 
 The generated output is written to:
@@ -127,9 +139,9 @@ The `public/` directory is ignored from the source branch because it is a genera
 
 | Branch | Purpose |
 | --- | --- |
-| `main` | Stable branch for reviewed code and future deployment. |
-| `feature/site-foundation` | Development branch for preparing the report site foundation. |
-| `backup/template-history` | Local backup branch that preserves the original template history. |
+| `main` | Stable branch used for the published report site. |
+| `feat/report` | Working branch used to update and review report content before merging. |
+| `backup/template-history` | Backup branch that preserves the original template history. |
 
 ---
 
@@ -138,6 +150,8 @@ The `public/` directory is ignored from the source branch because it is a genera
 ```text
 .
 ├── archetypes/
+├── .github/
+│   └── workflows/
 ├── content/
 ├── layouts/
 ├── static/
@@ -154,13 +168,14 @@ Main directories:
 - `layouts/`: Custom Hugo layout overrides.
 - `static/`: Static assets such as images, CSS, and icons.
 - `themes/`: Hugo theme used by the site.
-- `config.toml`: Main Hugo site configuration.
+- `.github/workflows/`: GitHub Actions workflow for building and deploying the site.
+- `config.toml`: Main Hugo site configuration, language settings, theme, and production URL.
 
 ---
 
 ## 🧭 Current Report Sections
 
-The original template structure is currently preserved:
+The report contains the following completed sections:
 
 - Worklog
 - Proposal
@@ -170,7 +185,7 @@ The original template structure is currently preserved:
 - Self-evaluation
 - Feedback
 
-These sections will be customized progressively to match the AWS internship report requirements.
+All sections have been customized for the AWS internship report and maintained in English and Vietnamese where applicable.
 
 ---
 
