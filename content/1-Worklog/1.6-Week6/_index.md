@@ -8,45 +8,28 @@ pre: " <b> 1.6. </b> "
 
 ### Week 6 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Understand the role of **AWS Security Hub** and **Amazon GuardDuty** in AWS security monitoring.
+- Protect web applications with **AWS WAF**.
+- Implement application authentication and authorization with **Amazon Cognito**.
+- Learn container deployment with **Amazon ECR** and **Amazon ECS**.
+- Deploy a containerized application using **AWS Fargate**.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+
+| Day | Task | Start Date | Completion Date | Reference Material |
+| :-- | :-- | :-- | :-- | :-- |
+| 1 | **Study AWS Security Hub and Amazon GuardDuty**<br>- Learn security posture, findings, and security standards.<br>- Enable Security Hub and review security findings.<br>- Enable GuardDuty and understand threat detection.<br>- Compare the roles of Security Hub and GuardDuty. | 25/05/2026 | 25/05/2026 | [AWS Security Hub](https://docs.aws.amazon.com/securityhub/)<br>[Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/) |
+| 2 | **Study AWS WAF**<br>- Learn Web ACL, Rule, Rule Group, Managed Rules, and Rate-Based Rules.<br>- Create a Web ACL and associate it with a CloudFront Distribution or Application Load Balancer.<br>- Test allowed and blocked requests.<br>- Review WAF metrics and logs. | 26/05/2026 | 26/05/2026 | [AWS WAF](https://docs.aws.amazon.com/waf/)<br>[What is AWS WAF?](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html) |
+| 3 | **Study Amazon Cognito**<br>- Learn User Pools, Identity Pools, users, groups, and JWT tokens.<br>- Create a User Pool and configure user sign-in.<br>- Review authentication and authorization flows.<br>- Protect an API with Cognito-issued tokens. | 27/05/2026 | 27/05/2026 | [Amazon Cognito](https://docs.aws.amazon.com/cognito/)<br>[What is Amazon Cognito?](https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html) |
+| 4 | **Study Amazon ECR and Amazon ECS**<br>- Learn container images, repositories, clusters, tasks, Task Definitions, and Services.<br>- Create an Amazon ECR Repository.<br>- Push an application image to ECR.<br>- Create an ECS Cluster and configure a Task Definition.<br>- Deploy an ECS Service using an ECR image. | 28/05/2026 | 28/05/2026 | [Amazon ECR](https://docs.aws.amazon.com/ecr/)<br>[Amazon ECS](https://docs.aws.amazon.com/ecs/) |
+| 5 | **Perform an AWS Fargate Hands-on Lab**<br>- Deploy a container image from ECR to ECS using **AWS Fargate**.<br>- Configure an ECS Service and verify task health.<br>- Connect the service to an Application Load Balancer.<br>- Access the containerized application and review CloudWatch logs.<br>- Clean up ECS, Fargate, ECR, and load balancer resources. | 29/05/2026 | 29/05/2026 | [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html)<br>[Amazon ECS getting started](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/get-set-up-for-amazon-ecs.html) |
 
 ### Week 6 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Enabled and reviewed security findings with **AWS Security Hub** and threat detections with **Amazon GuardDuty**.
+- Created an **AWS WAF Web ACL** and tested request filtering rules.
+- Created an **Amazon Cognito User Pool** and understood token-based authentication.
+- Created an **Amazon ECR Repository** and managed container images.
+- Created an **Amazon ECS Cluster**, Task Definition, and Service.
+- Deployed a containerized application to **AWS Fargate** and accessed it through an Application Load Balancer.
+- Practiced reviewing logs, validating resource health, and cleaning up AWS resources.
