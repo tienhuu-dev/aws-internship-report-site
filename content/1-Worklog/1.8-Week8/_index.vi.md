@@ -8,46 +8,29 @@ pre: " <b> 1.8. </b> "
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Hiểu các khái niệm cốt lõi về AI, Machine Learning, Deep Learning và Generative AI.
+- Tìm hiểu cách sử dụng foundation models được quản lý với **Amazon Bedrock**.
+- Tìm hiểu Machine Learning lifecycle với **Amazon SageMaker AI**.
+- Khám phá các dịch vụ AI được quản lý để phân tích hình ảnh, tài liệu và văn bản.
+- So sánh các dịch vụ AI/ML của AWS và lựa chọn dịch vụ phù hợp cho từng use case.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc thực hiện trong tuần này:
 
-### Kết quả đạt được tuần 8:
+| Ngày | Nội dung thực hiện | Ngày bắt đầu | Ngày kết thúc | Tài liệu tham khảo |
+| :-- | :-- | :-- | :-- | :-- |
+| 1 | **Tìm hiểu AI/ML Concepts trên AWS**<br>- Tìm hiểu Artificial Intelligence, Machine Learning, Deep Learning và Generative AI.<br>- Tìm hiểu dataset, training, inference, model và endpoint.<br>- So sánh managed AI services với ML platform.<br>- Ôn lại các use case phổ biến của AWS AI/ML. | 08/06/2026 | 08/06/2026 | [AWS Machine Learning](https://aws.amazon.com/machine-learning/)<br>[AWS AI Services](https://aws.amazon.com/machine-learning/ai-services/) |
+| 2 | **Tìm hiểu Amazon Bedrock**<br>- Tìm hiểu foundation model, model provider, inference, prompt và model parameters.<br>- Tìm hiểu Amazon Bedrock Agents và Knowledge Bases.<br>- Ôn lại security, IAM permissions và responsible use của Generative AI.<br>- So sánh model dựa trên quality, latency và cost. | 09/06/2026 | 09/06/2026 | [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/)<br>[Amazon Bedrock là gì?](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) |
+| 3 | **Tìm hiểu Amazon SageMaker AI**<br>- Tìm hiểu Machine Learning lifecycle từ chuẩn bị dữ liệu đến triển khai model.<br>- Tìm hiểu dataset, training job, model, endpoint và inference.<br>- Ôn lại built-in algorithms và các ML framework được hỗ trợ.<br>- So sánh Amazon SageMaker AI với Amazon Bedrock. | 10/06/2026 | 10/06/2026 | [Amazon SageMaker AI](https://docs.aws.amazon.com/sagemaker/)<br>[Amazon SageMaker AI là gì?](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html) |
+| 4 | **Tìm hiểu các AWS Managed AI Services**<br>- Tìm hiểu phân tích hình ảnh và video với **Amazon Rekognition**.<br>- Tìm hiểu trích xuất text, forms và tables với **Amazon Textract**.<br>- Tìm hiểu phân tích ngôn ngữ tự nhiên và văn bản với **Amazon Comprehend**.<br>- So sánh API-based AI services với việc tự phát triển ML model. | 11/06/2026 | 11/06/2026 | [Amazon Rekognition](https://docs.aws.amazon.com/rekognition/)<br>[Amazon Textract](https://docs.aws.amazon.com/textract/)<br>[Amazon Comprehend](https://docs.aws.amazon.com/comprehend/) |
+| 5 | **So sánh AWS AI/ML Services và đánh giá lựa chọn kiến trúc**<br>- So sánh Amazon Bedrock, Amazon SageMaker AI, Rekognition, Textract và Comprehend.<br>- Xác định dịch vụ phù hợp cho Generative AI, image analysis, document processing, NLP và custom ML model.<br>- Đánh giá security, privacy, latency, scalability và cost.<br>- Ghi lại tiêu chí lựa chọn dịch vụ và các quyết định kiến trúc AI/ML.<br>- Ôn lại responsible AI và các giới hạn của model. | 12/06/2026 | 12/06/2026 | [Amazon Bedrock hoặc Amazon SageMaker AI](https://docs.aws.amazon.com/pdfs/decision-guides/latest/bedrock-or-sagemaker/bedrock-or-sagemaker.pdf)<br>[AWS Responsible AI](https://aws.amazon.com/machine-learning/responsible-ai/) |
+| 6 | **Cải thiện AWS Architecture Diagram của nhóm**<br>- Tìm hiểu các công cụ draw.io cơ bản và AWS architecture icons.<br>- Rà soát sơ đồ cũ của nhóm và xác định các thành phần, kết nối chưa chính xác.<br>- Chỉnh sửa, cải thiện sơ đồ để kiến trúc và luồng dữ liệu rõ ràng hơn.<br>- Chuẩn bị sơ đồ đã cập nhật cho tài liệu kỹ thuật. | 13/06/2026 | 13/06/2026 | [draw.io](https://www.drawio.com/)<br>[AWS Architecture Icons](https://aws.amazon.com/architecture/icons/) |
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Kết quả đạt được trong tuần:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+- Hiểu các khái niệm cốt lõi về AI, Machine Learning, Deep Learning và Generative AI.
+- Hiểu vai trò của **Amazon Bedrock** trong việc xây dựng ứng dụng Generative AI với foundation models.
+- Hiểu Machine Learning lifecycle và các khái niệm triển khai của **Amazon SageMaker AI**.
+- Phân biệt được use case của **Amazon Rekognition**, **Amazon Textract** và **Amazon Comprehend**.
+- So sánh các dịch vụ AWS AI/ML dựa trên use case, khả năng tùy chỉnh model, security, latency, scalability và cost.
+- Ghi nhận các yếu tố responsible AI và giới hạn của model khi lựa chọn dịch vụ AI/ML.
+- Chỉnh sửa và cải thiện AWS architecture diagram của nhóm bằng draw.io.
