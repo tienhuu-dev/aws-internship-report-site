@@ -5,108 +5,129 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
+## A document management and learning-resource discovery platform designed with AWS deployment in mind
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
+### 1. Executive summary
+CloudDoc is a platform designed to help HUTECH students store, search, share, preview, and contribute academic materials such as slides, lecture notes, outlines, assignments, and exam resources. The goal is not simply to provide a place to upload files, but to build a structured, searchable, and moderated learning-resource library.
 
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+During this internship, my main contribution focused on frontend development, while I also supported the team in aligning UI workflows with backend integration, metadata design, and AWS-oriented deployment thinking. Because of that, this proposal reflects both the product perspective and the system-design perspective needed to move CloudDoc beyond a classroom demo.
 
-### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+The key idea behind the proposal is that CloudDoc should not be treated as a simple file-sharing website. Instead, it should be designed as a layered system where presentation, business logic, metadata management, and file storage are separated clearly enough to scale in future phases.
 
-### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+### 2. Problem statement
+In many student environments, learning materials are scattered across personal drives, chat groups, temporary links, and loosely organized folders. This creates several practical issues:
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+- Students spend unnecessary time searching for the right file or the most reliable version.
+- Document quality is hard to control because there is no moderation flow or shared metadata standard.
+- Files are often duplicated, mislabeled, or lost when old links expire.
+- New users have difficulty identifying which resources are useful and trustworthy.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+**Current challenges**
 
-### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+If the entire upload and download flow is routed through the application server, the backend quickly becomes a bottleneck as file size and user traffic increase. In addition, when file storage and metadata are not separated, it becomes harder to scale search, preview, moderation, and access-control features.
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+Another important challenge is that many existing file-sharing setups only solve the store file problem, not the use the file effectively problem. Without structured metadata such as school, department, subject, uploader, approval status, and usage signals, document discovery becomes inefficient over time.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+**Proposed solution**
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+CloudDoc is proposed with the following structure:
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+- A React frontend for search, upload, preview, and administration workflows.
+- A Node.js/Express backend for business logic, access control, and presigned URL generation.
+- PostgreSQL for structured metadata, approval states, uploader information, and document statistics.
+- Amazon S3 for original file storage and direct upload support through presigned URLs.
+- Extension-ready services such as CloudFront, SQS, CloudWatch, SNS, and Glacier for performance, asynchronous processing, observability, and storage optimization.
 
-### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+The most important design choice is to let the frontend upload files directly to S3 through presigned URLs while the backend focuses on metadata and business logic. This is a practical architecture for a document-centric platform expected to grow over time.
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+### 3. Solution architecture
+The architecture below illustrates the AWS-oriented direction for CloudDoc across the content-delivery layer, application layer, data layer, and operational support layer:
 
-### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+<img src="/images/2-Proposal/aws-drawio-cloudoc.png" alt="CloudDoc AWS Architecture" style="max-width: 90%; height: auto;">
 
-### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
+**Main component explanation**
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+- **Amazon CloudFront and Amazon S3 (Static):** deliver the static frontend efficiently to users while reducing latency and keeping the application layer focused on dynamic requests.
+- **Internet Gateway and Application Load Balancer:** receive incoming traffic and route requests into the backend layer.
+- **Amazon EC2:** runs the Express backend, generates presigned URLs, accepts metadata submissions, and handles the core business logic.
+- **Amazon RDS PostgreSQL:** stores document metadata, account data, moderation status, and structured information required for search and management flows.
+- **Amazon S3 (Upload):** stores uploaded documents and supports direct file transfer from the frontend.
+- **Amazon SQS:** provides a future-ready path for asynchronous jobs such as document processing, scanning, extraction, or indexing.
+- **Amazon CloudWatch and Amazon SNS:** support logging, monitoring, alerting, and operational visibility.
+- **Amazon S3 Glacier:** provides long-term storage-cost optimization for infrequently accessed materials.
 
-Total: $0.7/month, $8.40/12 months
+**Why this architecture matters**
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+This architecture shows that CloudDoc is not only a UI exercise. It is framed as a complete system with content delivery, application processing, structured metadata, object storage, and operational readiness. That perspective is important because it creates a realistic roadmap from internship demo to a more production-like platform.
 
-### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
+### 4. Technical implementation
+The practical internship scope stayed aligned with what the team could realistically complete in the current codebase:
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+- Building the React frontend for Home, Search, Upload, Preview, User Profile, and Admin Dashboard pages.
+- Designing simulated login and role-based access for students and administrators.
+- Standardizing document metadata for search, moderation, and management flows.
+- Preparing the document upload flow around the presigned URL model.
+- Supporting integration with the Express backend, PostgreSQL, and S3 for the demo stage.
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+This also means that not every AWS component in the architecture was fully implemented during the internship. Services such as SQS, CloudWatch, SNS, and Glacier currently represent a justified future direction rather than a fully completed delivery. Making that distinction explicit keeps the proposal honest and technically credible.
 
-### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+### 5. Roadmap and milestones
+**Phase 1: Core product stabilization**
+
+- Finalize search, upload, preview, and navigation experience.
+- Improve moderation flow and metadata consistency.
+- Complete the admin-facing management experience.
+
+**Phase 2: Real cloud integration**
+
+- Strengthen frontend integration with Express and PostgreSQL.
+- Complete the direct-to-S3 upload workflow through presigned URLs.
+- Improve environment setup and end-to-end testing reliability.
+
+**Phase 3: System expansion**
+
+- Add background processing for heavier or asynchronous tasks.
+- Improve monitoring, alerting, and logging for deployment readiness.
+- Apply storage lifecycle optimization for older, less frequently accessed documents.
+
+### 6. Budget estimate
+The image below summarizes the estimated monthly cost of the CloudDoc architecture in a near-production setup. The estimate is based on an AWS Pricing Calculator snapshot exported on **June 17, 2026**:
+
+<img src="/images/2-Proposal/aws-monthly-cost-cloudoc.jpg" alt="CloudDoc AWS Monthly Cost" style="max-width: 90%; height: auto;">
+
+| Item | Estimated monthly cost (USD) | Notes |
+| --- | ---: | --- |
+| RDS PostgreSQL Multi-AZ | 85.50 | The largest cost component because availability is prioritized |
+| EC2 Server (t4g.micro x2) | 19.51 | Two application instances across two AZs |
+| Application Load Balancer | 18.98 | Shared entry point and traffic distribution |
+| NAT Instance (t4g.nano) | 4.64 | Outbound support for private subnet resources |
+| CloudWatch | 4.01 | Basic metrics, logs, and alarms |
+| Other (SNS, CloudFront) | 0.89 | Small supporting service cost |
+| **Total** | **133.53** | Reference estimate for the target architecture |
+
+This cost profile is more suitable for a production-oriented architecture or a full demo environment than for a minimal student lab. For internship or dev/test environments, the team can reduce cost by:
+
+- Using a smaller single-AZ setup before higher availability is needed.
+- Stopping or downsizing EC2 instances outside active development windows.
+- Applying S3 lifecycle policies to move cold files to Glacier.
+- Enabling detailed CloudWatch logging only where it creates real value.
+- Using IAM Roles and an S3 Gateway Endpoint instead of hard-coded access keys.
+
+### 7. Risk assessment
+| Risk | Impact | Mitigation |
+| --- | --- | --- |
+| Misalignment between frontend, backend, and the presigned URL upload flow | Upload failures and inconsistent data flow | Standardize API contracts and validate the upload path end-to-end before demo |
+| Inconsistent metadata or weak moderation | Poor search experience and noisy content quality | Define mandatory metadata fields and add an approval workflow for administrators |
+| Weak AWS permission design | Data exposure or over-privileged access | Apply IAM Roles, the Principle of Least Privilege, and avoid hard-coded keys in source code |
+| High cost if the full architecture is kept for dev usage | Budget waste before real usage exists | Separate dev/demo environments and review cost regularly |
+| Limited operational visibility during incidents | Slow diagnosis and unstable troubleshooting | Add metrics, logs, CloudWatch alarms, and SNS notifications for critical components |
+| Internship scope is smaller than the full target architecture | Readers may assume the team over-claimed implementation | Clearly mark what was completed and what remains a future-ready design direction |
+
+### 8. Expected outcomes
+CloudDoc provides value at three levels:
+
+- **For end users:** students get a centralized and more trustworthy place to find and contribute learning resources.
+- **For the development team:** the project combines frontend, backend, metadata modeling, and AWS system thinking in a single product.
+- **For learning outcomes:** the platform connects UI/UX work, practical product thinking, and cloud architecture design in a very applied way.
+
+From my personal perspective, the proposal also reflects an important shift in mindset: moving from building a nice interface to designing an experience that must work together with data flow, security, cost, and system operations. That was one of the most meaningful learning outcomes of this internship.
