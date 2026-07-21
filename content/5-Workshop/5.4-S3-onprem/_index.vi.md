@@ -1,20 +1,36 @@
 ---
-title : "Truy cập S3 từ môi trường truyền thống"
-date : 2024-01-01 
-weight : 4 
-chapter : false
-pre : " <b> 5.4. </b> "
+title: "Kiểm thử hệ thống end-to-end"
+date: 2024-01-01
+weight: 4
+chapter: false
+pre: " <b> 5.4. </b> "
 ---
 
-#### Tổng quan
 
-+ Trong phần này, bạn sẽ tạo một Interface Endpoint để truy cập Amazon S3 từ môi trường truyền thống mô phỏng. Interface Endpoint sẽ cho phép bạn định tuyến đến Amazon S3 qua kết nối VPN từ môi trường truyền thống mô phỏng của bạn.
+#### Mục tiêu
 
-+ Tại sao nên sử dụng **Interface Endpoint**:
-    + Các Gateway endpoints chỉ hoạt động với các tài nguyên đang chạy trong VPC nơi chúng được tạo. Interface Endpoint  hoạt động với tài nguyên chạy trong VPC và cả tài nguyên chạy trong môi trường truyền thống. Khả năng kết nối từ môi trường truyền thống của bạn với aws cloud có thể được cung cấp bởi AWS Site-to-Site VPN hoặc AWS Direct Connect.
-    + Interface Endpoint cho phép bạn kết nối với các dịch vụ do AWS PrivateLink cung cấp. Các dịch vụ này bao gồm một số dịch vụ AWS, dịch vụ do các đối tác và khách hàng AWS lưu trữ trong VPC của riêng họ (gọi tắt là Dịch vụ PrivateLink endpoints) và các dịch vụ Đối tác AWS Marketplace. Đối với workshop này, chúng ta sẽ tập trung vào việc kết nối với Amazon S3.
-    
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+Phần này xác minh rằng tài liệu đã thật sự đi qua toàn bộ workflow của CloudDoc, từ lúc người dùng gửi file, tài liệu xuất hiện trong khu vực moderation, quản trị viên phê duyệt thành công, cho tới khi tài liệu được hiển thị lại ở các màn hình mà người dùng cuối có thể truy cập. Đây là phần quan trọng nhất để chứng minh tính end-to-end của workshop.
 
+#### Bằng chứng demo
 
+Người chấm có thể xem toàn bộ video demo tại đây: [Video demo CloudDoc](https://drive.google.com/drive/folders/1-mvKrbzs08WWHUT0-whSGeNwgtwd4Uid?usp=sharing).
 
+#### Quy trình kiểm thử
+
+Quy trình kiểm thử được thực hiện theo thứ tự sau:
+
+**Bước 1:** Xác nhận tài liệu xuất hiện trong dashboard quản trị với trạng thái chờ duyệt (`pending`).
+
+<img src="/images/5-Workshop/AWS-Console/admin-approve-dashboard.png" alt="Dashboard admin hiển thị tài liệu đang chờ duyệt" style="max-width: 90%; height: auto;">
+
+**Bước 2:** Thực hiện thao tác approve từ phía quản trị viên. Kiểm tra phản hồi thành công (toast message) và trạng thái của tài liệu được cập nhật sang `approved`.
+
+<img src="/images/5-Workshop/AWS-Console/admin-approve-toast.png" alt="Thông báo xác nhận sau khi admin duyệt và xuất bản tài liệu" style="max-width: 90%; height: auto;">
+
+**Bước 3:** Truy cập lại trang tìm kiếm công khai để xác nhận tài liệu đã xuất hiện. Bạn có thể tiếp tục thử hành vi xem trước hoặc tải xuống để bảo đảm tài liệu hiển thị đúng trên giao diện người dùng.
+
+<img src="/images/5-Workshop/AWS-Console/search-result.png" alt="Trang kết quả tìm kiếm hiển thị tài liệu đã được duyệt" style="max-width: 90%; height: auto;">
+
+#### Kết luận kiểm thử
+
+Khi cả ba màn hình trên đều khớp với mô tả nghiệp vụ, nhóm có thể kết luận rằng luồng upload, moderation và publish của CloudDoc hoạt động xuyên suốt giữa frontend, backend, S3 và cơ sở dữ liệu. Đây cũng là căn cứ để ghi nhận rằng dự án đã đáp ứng yêu cầu triển khai end-to-end trong checklist workshop.

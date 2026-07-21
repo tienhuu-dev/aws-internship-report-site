@@ -1,20 +1,30 @@
 ---
-title : "Access S3 from on-premises"
-date : 2024-01-01
-weight : 4
-chapter : false
-pre : " <b> 5.4. </b> "
+title: "Test the system end-to-end"
+date: 2024-01-01
+weight: 4
+chapter: false
+pre: " <b> 5.4. </b> "
 ---
 
-#### Overview
 
-+ In this section, you will create an Interface endpoint to access Amazon S3 from a simulated on-premises environment. The Interface endpoint will allow you to route to Amazon S3 over a VPN connection from your simulated on-premises environment.
+#### Objective
 
-+ Why using **Interface endpoint**: 
-    + Gateway endpoints only work with resources running in the VPC where they are created. Interface endpoints work with resources running in VPC, and also resources running in on-premises environments. Connectivty from your on-premises environment to the cloud can be provided by AWS Site-to-Site VPN or AWS Direct Connect.
-    + Interface endpoints allow you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and partners in their own VPCs (referred to as PrivateLink Endpoint Services), and supported AWS Marketplace Partner services. For this workshop, we will focus on connecting to Amazon S3.
+This section proves that a document truly moves through the full CloudDoc workflow, from user submission to moderation approval and final visibility in the user-facing interface. This is the strongest end-to-end evidence in the workshop.
 
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+#### Demo evidence
 
+The full recorded demo is available here for review: [CloudDoc demo video](https://drive.google.com/drive/folders/1-mvKrbzs08WWHUT0-whSGeNwgtwd4Uid?usp=sharing).
 
+#### Test sequence
 
+**Step 1:** Confirm the uploaded document appears in the admin moderation dashboard with a `pending` state.
+
+<img src="/images/5-Workshop/AWS-Console/admin-approve-dashboard.png" alt="Admin dashboard with pending document" style="max-width: 90%; height: auto;">
+
+**Step 2:** Approve the document from the administrator view and check the success response (toast notification).
+
+<img src="/images/5-Workshop/AWS-Console/admin-approve-toast.png" alt="Approval success notification" style="max-width: 90%; height: auto;">
+
+**Step 3:** Open the search page again and confirm that the document is visible. You can continue with preview or download access to verify that the state change is reflected in the user interface.
+
+<img src="/images/5-Workshop/AWS-Console/search-result.png" alt="Approved document in search results" style="max-width: 90%; height: auto;">

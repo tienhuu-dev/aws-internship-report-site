@@ -1,37 +1,28 @@
 ---
-title : "Dọn dẹp tài nguyên"
-date : 2024-01-01
-weight : 6
-chapter : false
-pre : " <b> 5.6. </b> "
+title: "Cập nhật dữ liệu"
+date: 2024-01-01
+weight: 6
+chapter: false
+pre: " <b> 5.6. </b> "
 ---
 
-#### Dọn dẹp tài nguyên
 
-Xin chúc mừng bạn đã hoàn thành xong lab này!
-Trong lab này, bạn đã học về các mô hình kiến trúc để truy cập Amazon S3 mà không sử dụng Public Internet.
+#### Mục tiêu
 
-+ Bằng cách tạo Gateway endpoint, bạn đã cho phép giao tiếp trực tiếp giữa các tài nguyên EC2 và Amazon S3, mà không đi qua Internet Gateway.
-Bằng cách tạo Interface endpoint, bạn đã mở rộng kết nối S3 đến các tài nguyên chạy trên trung tâm dữ liệu trên chỗ của bạn thông qua AWS Site-to-Site VPN hoặc Direct Connect.
+Sau khi tài liệu được duyệt, dữ liệu không chỉ đổi ở một nơi duy nhất mà phải được đồng bộ giữa backend, cơ sở dữ liệu và giao diện hiển thị. Mục này giải thích vì sao bước cập nhật dữ liệu là cần thiết trong một hệ thống có nhiều màn hình, nhiều trạng thái và có quy trình moderation như CloudDoc.
 
-#### Dọn dẹp
-1. Điều hướng đến Hosted Zones trên phía trái của bảng điều khiển Route 53. Nhấp vào tên của  s3.us-east-1.amazonaws.com zone. Nhấp vào Delete và xác nhận việc xóa bằng cách nhập từ khóa "delete".
+#### Các bước cập nhật
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+**Bước 1:** Đổi trạng thái tài liệu từ `pending` sang `approved`.
 
-2. Disassociate Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+**Bước 2:** Đồng bộ dữ liệu ở dashboard quản trị để cập nhật trạng thái hiển thị.
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+**Bước 3:** Truy cập trang tìm kiếm và đảm bảo dữ liệu mới nhất đã được đồng bộ, hiển thị đúng kết quả tài liệu vừa được duyệt.
 
-4.Mở console của CloudFormation và xóa hai stack CloudFormation mà bạn đã tạo cho bài thực hành này:
-+ PLOnpremSetup
-+ PLCloudSetup
+<img src="/images/5-Workshop/AWS-Console/search-result.png" alt="Kết quả tìm kiếm đã hiển thị tài liệu sau khi được phê duyệt" style="max-width: 90%; height: auto;">
 
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
+**Bước 4:** Cho phép preview và download với tài liệu đã duyệt để người dùng có thể thao tác bình thường.
 
-5. Xóa các S3 bucket
+#### Kết quả mong đợi
 
-+ Mở bảng điều khiển S3
-+ Chọn bucket chúng ta đã tạo cho lab, nhấp chuột và xác nhận là empty. Nhấp Delete và xác nhận delete.
-+ 
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+Tài liệu được hiển thị nhất quán trên mọi màn hình và phản ánh đúng dữ liệu hiện có trong hệ thống, từ trạng thái moderation cho đến quyền xem trước và tải xuống.
