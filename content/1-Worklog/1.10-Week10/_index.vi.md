@@ -8,46 +8,24 @@ pre: " <b> 1.10. </b> "
 
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai application layer và database layer theo kiến trúc Cloud.
+* Cấu hình các dịch vụ managed database, compute, load balancing và asynchronous messaging.
+* Thiết lập luồng tích hợp giữa S3 Event Notification và SQS.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| Ngày | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 1   | Triển khai **RDS DB Subnet Group** và **RDS PostgreSQL** trong private subnets để cung cấp database layer cho ứng dụng. | 22/06/2026   | 22/06/2026      |
+| 2   | Triển khai các **EC2 Application Servers** trong application layer và cấu hình kết nối đến cơ sở dữ liệu PostgreSQL. | 23/06/2026   | 23/06/2026      |
+| 3   | Triển khai **Application Load Balancer** để phân phối request đến các application servers và theo dõi trạng thái của target instances. | 24/06/2026   | 24/06/2026      |
+| 4   | Tạo **SQS Queue** và **Dead-Letter Queue (DLQ)** để hỗ trợ xử lý message bất đồng bộ và lưu trữ các message không được xử lý thành công. | 25/06/2026   | 25/06/2026      |
+| 5   | Cấu hình **S3 Event Notification** để gửi sự kiện từ S3 Bucket đến **SQS Queue** khi phát sinh hoạt động upload file. | 26/06/2026   | 26/06/2026      |
 
 ### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Triển khai **RDS DB Subnet Group** và **RDS PostgreSQL** trong private subnets.
+* Triển khai **EC2 Application Servers** và cấu hình kết nối đến cơ sở dữ liệu PostgreSQL.
+* Triển khai **Application Load Balancer** để phân phối request đến các application servers.
+* Tạo **SQS Queue** và **Dead-Letter Queue (DLQ)** cho quá trình xử lý message bất đồng bộ.
+* Cấu hình **S3 Event Notification** để gửi sự kiện upload file đến **SQS Queue**.
 
