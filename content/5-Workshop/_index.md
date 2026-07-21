@@ -6,23 +6,39 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Secure Hybrid Access to S3 using VPC Endpoints
 
-#### Overview
+# Building CloudDoc on AWS
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+#### Workshop overview
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+CloudDoc is a student-oriented document sharing platform. Users submit documents from a web interface, the backend handles business rules, Amazon S3 stores document files, the database stores metadata, and administrators approve submissions before they become publicly available. Section 5 is written as an end-to-end workshop so the reader can follow one complete document lifecycle instead of seeing isolated AWS services without context.
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+The workshop walks through the full implementation path: preparing the environment, uploading a document, validating that the object is stored correctly in AWS, testing the moderation workflow, synchronizing the visible application state, and finally cleaning up temporary resources to avoid unnecessary cost. This structure helps the report demonstrate design, implementation, validation, and operations together.
 
-#### Content
+#### Objectives
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+After reading this workshop, the reader should be able to:
+
+- understand the role of each component in CloudDoc,
+- follow the document upload and approval flow from start to finish,
+- map the AWS Console screenshots to the exact implementation steps,
+- review representative frontend and backend integration snippets,
+- and see that the project includes monitoring, validation, and resource clean-up.
+
+#### Expected result
+
+The final outcome is a system where users can upload documents successfully, administrators can approve documents in the moderation area, approved documents appear in search results, end users can preview or download them, and the environment is monitored with CloudWatch logs, metrics, and alarms.
+
+#### Demo video
+
+Reviewers can watch the recorded CloudDoc demo here: [CloudDoc demo video](https://drive.google.com/drive/folders/1-mvKrbzs08WWHUT0-whSGeNwgtwd4Uid?usp=sharing).
+
+#### Workshop structure
+
+1. [Introduction](5.1-workshop-overview/)
+2. [Prerequisite](5.2-prerequiste/)
+3. [Implement upload and storage flow](5.3-s3-vpc/)
+4. [Test the system end-to-end](5.4-s3-onprem/)
+5. [Client integration and observability](5.5-policy/)
+6. [Update data](5.6-cleanup/)
+7. [Clean resources](5.7-clean-resources/)

@@ -1,32 +1,24 @@
 ---
-title : "Clean up"
-date : 2024-01-01
-weight : 6
-chapter : false
-pre : " <b> 5.6. </b> "
+title: "Update data"
+date: 2024-01-01
+weight: 6
+chapter: false
+pre: " <b> 5.6. </b> "
 ---
-Congratulations on completing this workshop! 
-In this workshop, you learned architecture patterns for accessing Amazon S3 without using the Public Internet. 
-+ By creating a gateway endpoint, you enabled direct communication between EC2 resources and Amazon S3, without traversing an Internet Gateway. 
-+ By creating an interface endpoint you extended S3 connectivity to resources running in your on-premises data center via AWS Site-to-Site VPN or Direct Connect. 
 
-#### clean up
-1. Navigate to Hosted Zones on the left side of Route 53 console. Click the name of *s3.us-east-1.amazonaws.com* zone. Click Delete and confirm deletion by typing delete. 
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+#### Objective
 
-2. Disassociate the Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+Once a document is approved, the state change must be synchronized across the backend, database, and visible application screens. This section explains why data update is important in a moderated workflow like CloudDoc.
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+#### Update Steps
 
-4. Open the CloudFormation console  and delete the two CloudFormation Stacks that you created for this lab:
-+ PLOnpremSetup
-+ PLCloudSetup
+**Step 1:** Change the document state from `pending` to `approved` in the database.
 
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
+**Step 2:** Reflect the updated state in the admin dashboard so moderators can see the changes.
 
-5. Delete S3 buckets
-+ Open S3 console
-+ Choose the bucket we created for the lab, click and confirm empty. Click delete and confirm delete.
+**Step 3:** Reflect the updated state in the search page. The frontend must fetch the fresh data to keep the system consistent for users.
 
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+<img src="/images/5-Workshop/AWS-Console/search-result.png" alt="Approved document shown in search results" style="max-width: 90%; height: auto;">
+
+**Step 4:** Allow preview and download options for the approved document in the user interface.
